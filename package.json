@@ -1,0 +1,27 @@
+{
+  "name": "proyecto-moviles-1",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Proyecto ITI-621 - Registro de locales con Cordova",
+  "scripts": {
+    "platform:add": "cordova platform add android",
+    "plugin:camera": "cordova plugin add cordova-plugin-camera",
+    "plugin:geo": "cordova plugin add cordova-plugin-geolocation",
+    "build": "cordova build android",
+    "build:aab": "cordova build android --release -- --packageType=bundle",
+    "run": "cordova run android"
+  },
+  "devDependencies": {
+    "cordova": "^12.0.0",
+    "cordova-android": "^12.0.1",
+    "cordova-plugin-camera": "^7.0.0",
+    "cordova-plugin-geolocation": "^5.0.0"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-camera": {},
+      "cordova-plugin-geolocation": {}
+    },
+    "platforms": []
+  }
+}

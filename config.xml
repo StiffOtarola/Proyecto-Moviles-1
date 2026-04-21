@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.utn.locales" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>LocalesUTN</name>
+  <description>Aplicacion Cordova para gestion de locales.</description>
+  <author email="amancio.vargas@utn.ac.cr" href="https://www.utn.ac.cr/">UTN Guanacaste</author>
+  <content src="index.html" />
+  <allow-intent href="http://*/*" />
+  <allow-intent href="https://*/*" />
+  <allow-intent href="tel:*" />
+  <allow-intent href="sms:*" />
+  <allow-intent href="mailto:*" />
+  <allow-intent href="geo:*" />
+  <preference name="AndroidXEnabled" value="true" />
+  <platform name="android">
+    <icon src="resources/icon.png" density="mdpi" />
+  </platform>
+</widget>

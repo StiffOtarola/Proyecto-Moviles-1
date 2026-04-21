@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestor de Locales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="bg-orb orb-a"></div>
+  <div class="bg-orb orb-b"></div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-brand">
+        <img src="img/logo-locales.svg" alt="Logo Gestor de Locales" class="app-logo" />
+        <div>
+          <p class="eyebrow">Proyecto ITI-621</p>
+          <h1>Gestor de Locales</h1>
+          <p class="hero-copy">Registra descripciones, captura fotos y guarda ubicaciones en una sola vista.</p>
+        </div>
+      </div>
+      <div class="hero-tags">
+        <span>CRUD</span>
+        <span>Camara</span>
+        <span>Geolocalizacion</span>
+      </div>
+    </div>
+  </header>
+
+  <div id="formModal" class="modal-overlay is-hidden" role="dialog" aria-modal="true" aria-labelledby="formTitle">
+    <section class="card form-card modal-card" id="formCard">
+      <div class="section-title-row">
+        <h2 id="formTitle">Formulario</h2>
+        <div class="form-head-right">
+          <p class="section-note">ID unico y datos completos</p>
+          <button id="btnOcultarFormulario" type="button" class="btn-close-form">Cerrar</button>
+        </div>
+      </div>
+
+      <div class="grid-two">
+        <div class="form-group">
+          <label for="idLocal">ID Local (llave primaria)</label>
+          <input id="idLocal" type="text" maxlength="20" placeholder="Ej: L001" />
+        </div>
+
+        <div class="form-group">
+          <label for="descripcion">Descripcion</label>
+          <input id="descripcion" type="text" maxlength="120" placeholder="Nombre o descripcion corta" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="recomendacion">Recomendacion</label>
+        <textarea id="recomendacion" rows="4" maxlength="300" placeholder="Que recomendarias de este local"></textarea>
+      </div>
+
+      <div class="grid-two media-grid">
+        <div class="form-group">
+          <label>Foto</label>
+          <div class="photo-preview" id="photoPreview">Sin foto</div>
+          <button id="btnTomarFoto" type="button">Tomar Foto</button>
+        </div>
+
+        <div class="form-group">
+          <label>Ubicacion</label>
+          <input id="ubicacion" type="text" readonly placeholder="Latitud, Longitud" />
+          <button id="btnUbicacion" type="button">Obtener Ubicacion</button>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="btnAgregar" type="button" class="btn-add">Agregar</button>
+        <button id="btnEditar" type="button" class="btn-edit">Editar</button>
+        <button id="btnEliminar" type="button" class="btn-delete">Eliminar</button>
+        <button id="btnLimpiar" type="button" class="btn-clear">Limpiar</button>
+      </div>
+
+      <p id="mensaje" class="message"></p>
+    </section>
+  </div>
+
+  <main class="container">
+    <section class="card list-card">
+      <div class="section-title-row">
+        <h2>Registros</h2>
+        <span id="totalRegistros" class="counter-pill">0 locales</span>
+      </div>
+
+      <p id="registroActivo" class="section-note">Ningun registro seleccionado.</p>
+
+      <div class="list-toolbar">
+        <button id="btnNuevoLocal" type="button" class="btn-add btn-open-form">+ Agregar local</button>
+        <div class="search-box">
+          <input id="buscar" type="text" placeholder="Buscar por ID o descripcion" />
+        </div>
+      </div>
+
+      <div id="listaRegistros" class="records"></div>
+    </section>
+  </main>
+
+  <script src="cordova.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
